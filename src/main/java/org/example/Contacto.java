@@ -2,7 +2,10 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/* Class Contacto
+ * Esta clase representa un contacto en la agenda.
+ * Cada contacto tiene un nombre y una lista de números de teléfono.
+ */
 class Contacto {
     private String name;
     private List<String> phones;
