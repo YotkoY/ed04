@@ -2,26 +2,25 @@ package org.example;
 
 import java.util.*;
 
-/* Clase Agenda
- * Esta clase representa una agenda de contactos.
- * Permite añadir, eliminar y modificar contactos.
- */
-
+        /*Clase Agenda
+        * Esta clase representa una agenda de contactos
+        * Permite añadir, eliminar y modificar contactos
+        */
 public class Agenda {
     private List<Contacto> contacts; // Lista de Contacto
-    /* Constructor de la clase Agenda
-     * Inicializa la lista de contactos.
-     */
 
+        /*Constructor de la clase Agenda
+        * Inicializa la lista de contactos
+        */
     public Agenda() {
         this.contacts = new ArrayList<>();
     }
-    /* Método para añadir un contacto a la agenda.
-     * Si el contacto ya existe, se añade un nuevo número de teléfono.
-     * @param name Nombre del contacto.
-     * @param phone Número de teléfono del contacto.
-     */
 
+        /*Metodo para añadir un contacto a la lista de contactos
+        * Si el contacto ya existe, añade un nuevo telefono
+        * @param name  Nombre del contacto a añadir.
+        * @param phone Número de teléfono del contacto a añadir.
+        */
     public void addContact(String name, String phone) {
         boolean exists = false;
         for (Contacto c : contacts) {
@@ -31,18 +30,16 @@ public class Agenda {
                 break;
             }
         }
-        // Si el contacto no existe, se crea uno nuevo.
 
         if (!exists) {
             Contacto newContact = new Contacto(name, phone);
             contacts.add(newContact);
         }
     }
-/* Método para añadir un número de teléfono a un contacto existente.
-     * Si el contacto no existe, se crea uno nuevo.
-     * @param name Nombre del contacto.
-     * @param phone Número de teléfono a añadir.
-     */
+
+        /*Metodo para eliminar un contacto de la lista de contactos
+        * @param name nombre del contacto a eliminar
+        */
     public void removeContact(String name) {
         Iterator<Contacto> it = contacts.iterator();
 
@@ -54,10 +51,12 @@ public class Agenda {
             }
         }
     }
-    /* Método para eliminar un contacto de la agenda.
-     * @param name Nombre del contacto a eliminar.
-     */
 
+        /*Metodo para modificar el numero de telefono de un contacto
+         * @param name      Nombre del contacto cuyo número se modificará.
+         * @param oldPhone  Número de teléfono antiguo que será reemplazado.
+         * @param newPhone  Nuevo número de teléfono que reemplazará al antiguo.
+         */
     public void modifyPhoneNumber(String name, String oldPhone, String newPhone) {
         for (Contacto c : contacts) {
             if (c.getName().equalsIgnoreCase(name)) {
@@ -71,12 +70,10 @@ public class Agenda {
             }
         }
     }
-    /* Método para modificar el número de teléfono de un contacto existente.
-     * @param name Nombre del contacto.
-     * @param oldPhone Número de teléfono antiguo.
-     * @param newPhone Número de teléfono nuevo.
-     */
 
+        /*Metodo para obtener la lista de contactos
+        *  @return Lista de contactos
+        */
     public List<Contacto> getContacts() {
         return this.contacts;
     }
