@@ -1,6 +1,13 @@
 package org.example;
 
+        /**
+         * Clase principal que demuestra el uso de la clase Agenda.
+         */
 public class Main {
+
+        /**
+         * Método principal que ejecuta una serie de operaciones en una Agenda.
+         */
     public static void main(String[] args) {
         // Crear una nueva agenda.
         Agenda agenda = new Agenda();

@@ -2,21 +2,21 @@ package org.example;
 
 import java.util.*;
 
-        /*Clase Agenda
+        /**Clase Agenda
         * Esta clase representa una agenda de contactos
         * Permite añadir, eliminar y modificar contactos
         */
 public class Agenda {
     private List<Contacto> contacts; // Lista de Contacto
 
-        /*Constructor de la clase Agenda
+        /**Constructor de la clase Agenda
         * Inicializa la lista de contactos
         */
     public Agenda() {
         this.contacts = new ArrayList<>();
     }
 
-        /*Metodo para añadir un contacto a la lista de contactos
+        /**Metodo para añadir un contacto a la lista de contactos
         * Si el contacto ya existe, añade un nuevo telefono
         * @param name  Nombre del contacto a añadir.
         * @param phone Número de teléfono del contacto a añadir.
@@ -37,7 +37,7 @@ public class Agenda {
         }
     }
 
-        /*Metodo para eliminar un contacto de la lista de contactos
+        /**Metodo para eliminar un contacto de la lista de contactos
         * @param name nombre del contacto a eliminar
         */
     public void removeContact(String name) {
@@ -52,7 +52,7 @@ public class Agenda {
         }
     }
 
-        /*Metodo para modificar el numero de telefono de un contacto
+        /**Metodo para modificar el numero de telefono de un contacto
          * @param name      Nombre del contacto cuyo número se modificará.
          * @param oldPhone  Número de teléfono antiguo que será reemplazado.
          * @param newPhone  Nuevo número de teléfono que reemplazará al antiguo.
@@ -71,7 +71,7 @@ public class Agenda {
         }
     }
 
-        /*Metodo para obtener la lista de contactos
+        /**Metodo para obtener la lista de contactos
         *  @return Lista de contactos
         */
     public List<Contacto> getContacts() {
