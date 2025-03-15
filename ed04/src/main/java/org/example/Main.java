@@ -6,7 +6,7 @@ package org.example;
 public class Main {
 
         /**
-         * Método principal que ejecuta una serie de operaciones en una Agenda.
+         * Metodo principal que ejecuta una serie de operaciones en una Agenda.
          */
     public static void main(String[] args) {
         // Crear una nueva agenda.
