@@ -1,0 +1,196 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > Agenda</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example</a>
+</div>
+
+<h1>Coverage Summary for Class: Agenda (org.example)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Agenda</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    93,8%
+  </span>
+  <span class="absValue">
+    (15/16)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (22/22)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example;
+&nbsp;
+&nbsp;import java.util.*;
+&nbsp;
+&nbsp;        /**Clase Agenda
+&nbsp;        * Esta clase representa una agenda de contactos
+&nbsp;        * Permite añadir, eliminar y modificar contactos
+&nbsp;        */
+&nbsp;public class Agenda {
+&nbsp;    private List&lt;Contacto&gt; contacts; // Lista de Contacto
+&nbsp;
+&nbsp;        /**Constructor de la clase Agenda
+&nbsp;        * Inicializa la lista de contactos
+&nbsp;        */
+<b class="fc">&nbsp;    public Agenda() {</b>
+<b class="fc">&nbsp;        this.contacts = new ArrayList&lt;&gt;();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;        /**Metodo para añadir un contacto a la lista de contactos
+&nbsp;        * Si el contacto ya existe, añade un nuevo telefono
+&nbsp;        * @param name  Nombre del contacto a añadir.
+&nbsp;        * @param phone Número de teléfono del contacto a añadir.
+&nbsp;        */
+&nbsp;    public void addContact(String name, String phone) {
+<b class="fc">&nbsp;        boolean exists = false;</b>
+<b class="fc">&nbsp;        for (Contacto c : contacts) {</b>
+<b class="fc">&nbsp;            if (c.getName().equalsIgnoreCase(name)) {</b>
+<b class="fc">&nbsp;                exists = true;</b>
+<b class="fc">&nbsp;                c.getPhones().add(phone);</b>
+&nbsp;                break;
+&nbsp;            }
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;        if (!exists) {</b>
+<b class="fc">&nbsp;            Contacto newContact = new Contacto(name, phone);</b>
+<b class="fc">&nbsp;            contacts.add(newContact);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;        /**Metodo para eliminar un contacto de la lista de contactos
+&nbsp;        * @param name nombre del contacto a eliminar
+&nbsp;        */
+&nbsp;    public void removeContact(String name) {
+<b class="fc">&nbsp;        Iterator&lt;Contacto&gt; it = contacts.iterator();</b>
+&nbsp;
+<b class="fc">&nbsp;        while (it.hasNext()) {</b>
+<b class="fc">&nbsp;            Contacto c = it.next();</b>
+&nbsp;
+<b class="fc">&nbsp;            if (c.getName().equalsIgnoreCase(name)) {</b>
+<b class="fc">&nbsp;                it.remove();</b>
+&nbsp;            }
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;        /**Metodo para modificar el numero de telefono de un contacto
+&nbsp;         * @param name      Nombre del contacto cuyo número se modificará.
+&nbsp;         * @param oldPhone  Número de teléfono antiguo que será reemplazado.
+&nbsp;         * @param newPhone  Nuevo número de teléfono que reemplazará al antiguo.
+&nbsp;         */
+&nbsp;    public void modifyPhoneNumber(String name, String oldPhone, String newPhone) {
+<b class="fc">&nbsp;        for (Contacto c : contacts) {</b>
+<b class="fc">&nbsp;            if (c.getName().equalsIgnoreCase(name)) {</b>
+<b class="fc">&nbsp;                List&lt;String&gt; phones = c.getPhones();</b>
+&nbsp;
+<b class="fc">&nbsp;                int index = phones.indexOf(oldPhone);</b>
+&nbsp;
+<b class="pc">&nbsp;                if (index != -1) {</b>
+<b class="fc">&nbsp;                    phones.set(index, newPhone);</b>
+&nbsp;                }
+&nbsp;            }
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;        /**Metodo para obtener la lista de contactos
+&nbsp;        *  @return Lista de contactos
+&nbsp;        */
+&nbsp;    public List&lt;Contacto&gt; getContacts() {
+<b class="fc">&nbsp;        return this.contacts;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-03-16 14:03</div>
+</div>
+</body>
+</html>

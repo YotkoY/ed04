@@ -3,20 +3,20 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
-    /**Clase Contacto
+    /**Clase Persona
     *Esta clase representa un contacto en la agenda
     *Cada contacto tiene un nombre y una lista de telefonos
     */
-class Contacto {
+class Persona {
     private String name;
     private List<String> phones;
 
-    /**Constructor de la clase Contacto
+    /**Constructor de la clase Persona
     * Inicializa el nombre del contacto y añade un telefono a la lista
     * @param name  Nombre del contacto
     * @param phone Número de teléfono del contacto
     */
-    public Contacto(String name, String phone) {
+    public Persona(String name, String phone) {
         this.name = name;
         this.phones = new ArrayList<>();
         this.phones.add(phone);

@@ -1,0 +1,154 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > Main</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example</a>
+</div>
+
+<h1>Coverage Summary for Class: Main (org.example)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Main</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (1/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    92,9%
+  </span>
+  <span class="absValue">
+    (13/14)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example;
+&nbsp;        /**
+&nbsp;         * Clase Main
+&nbsp;         * Esta clase contiene el método principal para ejecutar la aplicación.
+&nbsp;         * Se encarga de crear una agenda y realizar operaciones sobre ella.
+&nbsp;         */
+&nbsp;
+<b class="nc">&nbsp;public class Main {</b>
+&nbsp;    public static void main(String[] args) {
+&nbsp;        // Crear una nueva agenda.
+<b class="fc">&nbsp;        Agenda agenda = new Agenda();</b>
+&nbsp;
+&nbsp;        // Añadir contactos a la agenda.
+<b class="fc">&nbsp;        agenda.addContact(&quot;John Doe&quot;, &quot;1234567890&quot;);</b>
+<b class="fc">&nbsp;        agenda.addContact(&quot;Jane Doe&quot;, &quot;9876543210&quot;);</b>
+<b class="fc">&nbsp;        agenda.addContact(&quot;Mary Jane&quot;, &quot;1122334455&quot;);</b>
+&nbsp;
+&nbsp;        // Imprimir todos los contactos de la agenda.
+<b class="fc">&nbsp;        System.out.println(&quot;Todos los contactos: &quot;);</b>
+<b class="fc">&nbsp;        for (Contacto c : agenda.getContacts()) {</b>
+<b class="fc">&nbsp;            System.out.println(c.getName() + &quot; -&gt; &quot; + c.getPhones());</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        // Añadir un nuevo teléfono a un contacto existente.
+<b class="fc">&nbsp;        agenda.addContact(&quot;John Doe&quot;, &quot;6543219876&quot;);</b>
+&nbsp;
+&nbsp;        // Eliminar un contacto de la agenda.
+<b class="fc">&nbsp;        agenda.removeContact(&quot;Jane Doe&quot;);</b>
+&nbsp;
+&nbsp;        // Modificar el teléfono de un contacto existente en la agenda.
+<b class="fc">&nbsp;        agenda.modifyPhoneNumber(&quot;John Doe&quot;, &quot;1234567890&quot;, &quot;6666666666&quot;);</b>
+&nbsp;
+<b class="fc">&nbsp;        System.out.println(&quot;\nDespués de añadir, eliminar y modificar contactos: &quot;);</b>
+<b class="fc">&nbsp;        for (Contacto c : agenda.getContacts()) {</b>
+<b class="fc">&nbsp;            System.out.println(c.getName() + &quot; -&gt; &quot; + c.getPhones());</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-03-16 14:03</div>
+</div>
+</body>
+</html>
