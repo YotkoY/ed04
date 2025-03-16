@@ -1,5 +1,11 @@
 package org.example;
 
+        /**
+         * Clase Main
+         * Esta clase contiene el método principal para ejecutar la aplicación.
+         * Se encarga de crear una agenda y realizar operaciones sobre ella.
+         */
+
 public class Main {
     public static void main(String[] args) {
         // Crear una nueva agenda.
